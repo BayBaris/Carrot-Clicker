@@ -30,7 +30,6 @@ public class InputManager : MonoBehaviour
         {
             return;
         }
-        Debug.Log("We Hit Carrot");
         onCarrotClicked?.Invoke();
     }
 }
