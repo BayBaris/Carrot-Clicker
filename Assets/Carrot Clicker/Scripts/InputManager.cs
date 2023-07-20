@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
 {
     [Header("Actions")]
     public static Action onCarrotClicked;
+    public static Action<Vector2> onCarrotClickedPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,5 +32,7 @@ public class InputManager : MonoBehaviour
             return;
         }
         onCarrotClicked?.Invoke();
+        // World Space
+        onCarrotClickedPosition?.Invoke(hit.point);
     }
 }
