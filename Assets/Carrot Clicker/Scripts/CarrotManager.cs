@@ -10,16 +10,25 @@ public class CarrotManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI carrotCountText;
     [Header("Data")]
     [SerializeField] private double totalCarrotsCount;
-    [SerializeField] private int carrotIncrement;
+    [SerializeField] private double frenzyModeMultiplier;
+    private int carrotIncrement;
     private void Awake()
     {
         LoadData();
+        carrotIncrement = 1;
+
+        //Subscribe action on Awake;
         InputManager.onCarrotClicked += CarrotClickedCallback;
+        Carrot.onFrenzyModeStarted += FrenzyModeStartedCallback;
+        Carrot.onFrenzyModeStopped += FrenzyModeStoppedCallback;
     }
 
     private void OnDestroy()
     {
+        //Unsubscribe action on OnDestory
         InputManager.onCarrotClicked -= CarrotClickedCallback;
+        Carrot.onFrenzyModeStarted -= FrenzyModeStartedCallback;
+        Carrot.onFrenzyModeStopped -= FrenzyModeStoppedCallback;
     }
 
     private void CarrotClickedCallback()
@@ -27,6 +36,16 @@ public class CarrotManager : MonoBehaviour
         totalCarrotsCount += carrotIncrement;
         UpdateCarrotText();
         SaveData();
+    }
+
+    private void FrenzyModeStartedCallback()
+    {
+        carrotIncrement = (int)frenzyModeMultiplier;
+    }
+
+    private void FrenzyModeStoppedCallback()
+    {
+        carrotIncrement = 1;
     }
 
     void Start()

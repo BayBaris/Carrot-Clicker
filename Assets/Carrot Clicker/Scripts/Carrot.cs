@@ -9,9 +9,14 @@ public class Carrot : MonoBehaviour
     [Header("Elements")]
     [SerializeField] private Transform carrotRendererTransform;
     [SerializeField] private Image fillImage;
+
     [Header("Settings")]
     [SerializeField] private float fillRate;
     private bool isFrenzyModeActive;
+
+    [Header("Actions")]
+    public static Action onFrenzyModeStarted;
+    public static Action onFrenzyModeStopped;
     private void Awake()
     {
         InputManager.onCarrotClicked += CarrotClickedCallback;
@@ -55,13 +60,16 @@ public class Carrot : MonoBehaviour
     private void StartFrenzyMode()
     {
         isFrenzyModeActive = true;
+        // 5 saniye boyuncu deðeri 1 => 0 a indir ve bu deðeri fillAmounta ata. Ýþlem bitince StopFrenzy methodunu çalýþtýr.
         LeanTween.value(1, 0, 5).setOnUpdate((value) => fillImage.fillAmount = value)
             .setOnComplete(StopFrenzyMode);
+        onFrenzyModeStarted?.Invoke();
     }
 
     private void StopFrenzyMode()
     {
         isFrenzyModeActive = false;
+        onFrenzyModeStopped?.Invoke();
     }
 
     // Start is called before the first frame update
