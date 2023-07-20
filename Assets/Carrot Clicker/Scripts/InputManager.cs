@@ -8,10 +8,12 @@ public class InputManager : MonoBehaviour
     [Header("Actions")]
     public static Action onCarrotClicked;
     public static Action<Vector2> onCarrotClickedPosition;
+    public static Action onPlayButtonClicked;
+    public static Action onBackMenuButtonClicked;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame

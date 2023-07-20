@@ -74,6 +74,11 @@ public class CarrotManager : MonoBehaviour
         UpdateCarrotText();
     }
 
+    public void ResetData()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     public int GetCurrentMultiplier()
     {
         return carrotIncrement;
