@@ -73,4 +73,9 @@ public class CarrotManager : MonoBehaviour
         double.TryParse(PlayerPrefs.GetString("Carrots"), out totalCarrotsCount);
         UpdateCarrotText();
     }
+
+    public int GetCurrentMultiplier()
+    {
+        return carrotIncrement;
+    }
 }

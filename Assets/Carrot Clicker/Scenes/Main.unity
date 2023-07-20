@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusParticlePrefab: {fileID: 2333798352730491000, guid: 11ed70521bac43046b6c560da2aae25e, type: 3}
+  carrotManager: {fileID: 286473829}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carrotRendererTransform: {fileID: 2123114063}
   fillImage: {fileID: 293579931}
-  fillRate: 0.02
+  fillRate: 0.05
 --- !u!1 &1461460966
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,8 @@ using UnityEngine;
 public class BonusParticlesManager : MonoBehaviour
 {
     [Header("Elemnts")]
-    [SerializeField] private GameObject bonusParticlePrefab; 
+    [SerializeField] private GameObject bonusParticlePrefab;
+    [SerializeField] private CarrotManager carrotManager;
     private void Awake()
     {
         InputManager.onCarrotClickedPosition += CarrotClickedCallback;
@@ -20,6 +21,7 @@ public class BonusParticlesManager : MonoBehaviour
     private void CarrotClickedCallback(Vector2 clickedPosition)
     {
         GameObject bonusParticleInstance = Instantiate(bonusParticlePrefab,clickedPosition,Quaternion.identity, transform);
+        bonusParticleInstance.GetComponent<BonusParticle>().Configure(carrotManager.GetCurrentMultiplier());
         Destroy(bonusParticleInstance, 1);
     }
     // Start is called before the first frame update
