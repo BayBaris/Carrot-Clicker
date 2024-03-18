@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class CarrotManager : MonoBehaviour
 {
+    public static CarrotManager instance;
+
     [Header("Elements")]
     [SerializeField] private TextMeshProUGUI carrotCountText;
     [Header("Data")]
@@ -14,6 +16,11 @@ public class CarrotManager : MonoBehaviour
     private int carrotIncrement;
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+        
         LoadData();
         carrotIncrement = 1;
 
@@ -50,7 +57,7 @@ public class CarrotManager : MonoBehaviour
 
     void Start()
     {
-        
+        AddCarrots(5000);
     }
 
     // Update is called once per frame
@@ -58,9 +65,36 @@ public class CarrotManager : MonoBehaviour
     {
         
     }
+
+    public void AddCarrots(double value)
+    {
+        totalCarrotsCount += value;
+
+        UpdateCarrotText();
+        SaveData();
+    } 
+    public void AddCarrots(float value)
+    {
+        totalCarrotsCount += value;
+
+        UpdateCarrotText();
+        SaveData();
+    }
+
+    public bool TryPurchase(double price)
+    {
+        if (price <= totalCarrotsCount)
+        {
+            totalCarrotsCount -= price;
+            return true;
+        }
+
+        return false;
+    }
+
     private void UpdateCarrotText()
     {
-        carrotCountText.text = totalCarrotsCount + " Carrots!";
+        carrotCountText.text = totalCarrotsCount.ToString("F0") + " Carrots!";
     }
 
     private void SaveData()
