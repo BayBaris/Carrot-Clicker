@@ -941,7 +941,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 724898061}
-        m_TargetAssemblyTypeName: UIShopManagers, Assembly-CSharp
+        m_TargetAssemblyTypeName: UIShopManager, Assembly-CSharp
         m_MethodName: Open
         m_Mode: 1
         m_Arguments:
@@ -1046,7 +1046,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 724898061}
-          m_TargetAssemblyTypeName: UIShopManagers, Assembly-CSharp
+          m_TargetAssemblyTypeName: UIShopManager, Assembly-CSharp
           m_MethodName: Close
           m_Mode: 1
           m_Arguments:

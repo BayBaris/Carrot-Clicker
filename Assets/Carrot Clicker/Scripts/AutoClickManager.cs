@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -66,7 +66,7 @@ public class AutoClickManager : MonoBehaviour
             bunnyInstance.SetActive(false);
             bunnyPool.Add(bunnyInstance);
             
-            float angle = i * 20; // 360 derecelik çemberdeki tavþanlarýn arasýndaki mesafeyi belirleyecek olan açý (360/18 = 20) 
+            float angle = i * 20; // 360 derecelik Ã§emberdeki tavÅŸanlarÄ±n arasÄ±ndaki mesafeyi belirleyecek olan aÃ§Ä± (360/18 = 20) 
 
             Vector2 position = new Vector2();
             position.x = rotatorRadius * Mathf.Cos(angle * Mathf.Deg2Rad);

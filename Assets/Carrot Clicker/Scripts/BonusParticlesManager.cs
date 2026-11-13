@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -55,8 +55,8 @@ public class BonusParticlesManager : MonoBehaviour
     }
     private void CarrotClickedCallback(Vector2 clickedPosition)
     {
-        GameObject bonusParticleInstance = bonusParticlePool.Get(); //Havuzdan objemizi çaðýrýyoruz.
-        bonusParticleInstance.transform.position = clickedPosition; //Týkladýðýmýz yerde parçacýk çýkmasý için pozisyonunu ayarlýyoruz.
+        GameObject bonusParticleInstance = bonusParticlePool.Get(); //Havuzdan objemizi Ã§aÄŸÄ±rÄ±yoruz.
+        bonusParticleInstance.transform.position = clickedPosition; //TÄ±kladÄ±ÄŸÄ±mÄ±z yerde parÃ§acÄ±k Ã§Ä±kmasÄ± iÃ§in pozisyonunu ayarlÄ±yoruz.
         bonusParticleInstance.GetComponent<BonusParticle>().Configure(carrotManager.GetCurrentMultiplier());
 
         LeanTween.delayedCall(1, () => bonusParticlePool.Release(bonusParticleInstance));

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +32,7 @@ public class UpgradeManager : MonoBehaviour
             totalCarrots += upgradeCarrots;
         }
 
-        //Burada, her saniye başı ekleyeceğimiz havuçlara ihtiyacımız var.
+        //Burada, her saniye baÅŸÄ± ekleyeceÄŸimiz havuÃ§lara ihtiyacÄ±mÄ±z var.
 
         CarrotManager.instance.AddCarrots(totalCarrots);
     }

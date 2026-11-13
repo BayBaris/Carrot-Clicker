@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIShopManagers : MonoBehaviour
+public class UIShopManager : MonoBehaviour
 {
     [Header("Elements")]
     [SerializeField] private RectTransform shopPanel;

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,7 +42,7 @@ public class Carrot : MonoBehaviour
     private void Animate()
     {
         // Vector3.one == 1.0f on transform..
-        // Bir kereliðine loop'a girmesini saðlýyoruz. Büyüyüp küçülme efektini bu þekilde saðlýyoruz. (.setLoopPingPong())
+        // Bir kereliÄŸine loop'a girmesini saÄŸlÄ±yoruz. BÃ¼yÃ¼yÃ¼p kÃ¼Ã§Ã¼lme efektini bu ÅŸekilde saÄŸlÄ±yoruz. (.setLoopPingPong())
         carrotRendererTransform.localScale = Vector3.one * .8f;
         LeanTween.cancel(carrotRendererTransform.gameObject);
         LeanTween.scale(carrotRendererTransform.gameObject, Vector3.one * 0.7f, .15f).setLoopPingPong(1);
@@ -60,7 +60,7 @@ public class Carrot : MonoBehaviour
     private void StartFrenzyMode()
     {
         isFrenzyModeActive = true;
-        // 5 saniye boyuncu deðeri 1 => 0 a indir ve bu deðeri fillAmounta ata. Ýþlem bitince StopFrenzy methodunu çalýþtýr.
+        // 5 saniye boyuncu deÄŸeri 1 => 0 a indir ve bu deÄŸeri fillAmounta ata. Ä°ÅŸlem bitince StopFrenzy methodunu Ã§alÄ±ÅŸtÄ±r.
         LeanTween.value(1, 0, 5).setOnUpdate((value) => fillImage.fillAmount = value)
             .setOnComplete(StopFrenzyMode);
         onFrenzyModeStarted?.Invoke();
