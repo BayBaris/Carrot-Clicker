@@ -79,7 +79,7 @@ public class AutoClickManager : MonoBehaviour
 
     private void SpawnBunnies()
     {
-        for (int i = 0; i < level; i++)
+        for (int i = 0; i < Mathf.Min(level, bunnyPool.Count); i++)
         {
             if (!bunnyPool[i].activeInHierarchy)
             {
