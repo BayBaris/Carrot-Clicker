@@ -81,4 +81,4 @@ Bu proje öğrenme amaçlı bir kurs çalışmasıdır. Kullanılan içerikler i
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/baybarisk/)
 [![itch.io](https://img.shields.io/badge/itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white)](https://baybaris.itch.io/)
 
-Barış Karakaya · Bilgisayar Mühendisi / Solo Oyun Geliştirici
+Barış Karakaya · Bilgisayar Mühendisi · Game Designer · Gamification
